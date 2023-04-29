@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  tgbot:
+    container_name: tgbot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      NODE_ENV: production
+    ports:
+      - "80:3000"
+    volumes:
+      - ./src:/usr/src/app/src
